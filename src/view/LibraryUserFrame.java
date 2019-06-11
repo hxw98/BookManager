@@ -15,9 +15,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
- * ÓÃ»§µÇÂ¼ºóµÄÖ÷½çÃæ
+ * ç”¨æˆ·ç™»å½•åçš„ä¸»ç•Œé¢
  * 
- * @author ºÎĞËÍú
+ * @author ä½•å…´æ—º
  *
  */
 public class LibraryUserFrame extends JFrame {
@@ -26,33 +26,33 @@ public class LibraryUserFrame extends JFrame {
 	public LibraryUserFrame() {
 		this.setLayout(null);
 		ImageIcon img = new ImageIcon(
-				"C:\\Users\\mac\\workspace\\liberty\\image\\3.jpg");
-		// ÒªÉèÖÃµÄ±³¾°Í¼Æ¬
+				"image/3.jpg");
+		// è¦è®¾ç½®çš„èƒŒæ™¯å›¾ç‰‡
 		JLabel imgLabel = new JLabel(img);
-		// ½«±³¾°Í¼·ÅÔÚ±êÇ©Àï¡£
+		// å°†èƒŒæ™¯å›¾æ”¾åœ¨æ ‡ç­¾é‡Œã€‚
 		this.getLayeredPane().add(imgLabel, new Integer(Integer.MIN_VALUE));
-		// ½«±³¾°±êÇ©Ìí¼Óµ½jframµÄLayeredPaneÃæ°åÀï¡£
+		// å°†èƒŒæ™¯æ ‡ç­¾æ·»åŠ åˆ°jframçš„LayeredPaneé¢æ¿é‡Œã€‚
 		imgLabel.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());
-		// ÉèÖÃ±³¾°±êÇ©µÄÎ»ÖÃ
+		// è®¾ç½®èƒŒæ™¯æ ‡ç­¾çš„ä½ç½®
 		Container contain = this.getContentPane();
 		((JPanel) contain).setOpaque(false);
 
 		setSize(1000, 750);
-		setTitle("Í¼Êé¹İ¹ÜÀíÏµÍ³_ÓÃ»§");
-		setResizable(false); // ²»¿É¸Ä±ä´°¿Ú´óĞ¡
-		// »ñÈ¡ÆÁÄ»´óĞ¡ºÍµ±Ç°frameµÄ´óĞ¡
+		setTitle("å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ_ç”¨æˆ·");
+		setResizable(false); // ä¸å¯æ”¹å˜çª—å£å¤§å°
+		// è·å–å±å¹•å¤§å°å’Œå½“å‰frameçš„å¤§å°
 		Dimension thisScreen = Toolkit.getDefaultToolkit().getScreenSize();
 		Dimension thisFrame = this.getSize();
-		// Ê¹Æô¶¯´°¿ÚÎ»ÓÚÆÁÄ»µÄÕıÖĞĞÄ
+		// ä½¿å¯åŠ¨çª—å£ä½äºå±å¹•çš„æ­£ä¸­å¿ƒ
 		setLocation((thisScreen.width - thisFrame.width) / 2,
 				(thisScreen.height - thisFrame.height) / 2);
-		// ÉèÖÃµ¥»÷´°¿ÚµÄ¡¾¹Ø±Õ¡¿°´Å¥Ê±½«·¢ÉúÏàÓ¦µÄ¶¯×÷
+		// è®¾ç½®å•å‡»çª—å£çš„ã€å…³é—­ã€‘æŒ‰é’®æ—¶å°†å‘ç”Ÿç›¸åº”çš„åŠ¨ä½œ
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		JMenuBar menuBar = new JMenuBar(); // ´´½¨²Ëµ¥À¸
-		// ´´½¨²Ëµ¥
-		JMenu j1 = new JMenu("Êé¼®¹ÜÀí");
-		JMenuItem j1_1 = new JMenuItem("ËÑË÷Í¼Êé");
+		JMenuBar menuBar = new JMenuBar(); // åˆ›å»ºèœå•æ 
+		// åˆ›å»ºèœå•
+		JMenu j1 = new JMenu("ä¹¦ç±ç®¡ç†");
+		JMenuItem j1_1 = new JMenuItem("æœç´¢å›¾ä¹¦");
 		j1_1.addActionListener(new ActionListener() {
 
 			@Override
@@ -60,7 +60,7 @@ public class LibraryUserFrame extends JFrame {
 				new BookSearch().setVisible(true);
 			}
 		});
-		JMenuItem j1_2 = new JMenuItem("²é¿´ËùÓĞÍ¼Êé");
+		JMenuItem j1_2 = new JMenuItem("æŸ¥çœ‹æ‰€æœ‰å›¾ä¹¦");
 		j1_2.addActionListener(new ActionListener() {
 
 			@Override
@@ -68,7 +68,7 @@ public class LibraryUserFrame extends JFrame {
 				new AllBook().setVisible(true);
 			}
 		});
-		JMenuItem j1_3 = new JMenuItem("½èÔÄÍ¼Êé");
+		JMenuItem j1_3 = new JMenuItem("å€Ÿé˜…å›¾ä¹¦");
 		j1_3.addActionListener(new ActionListener() {
 
 			@Override
@@ -77,7 +77,7 @@ public class LibraryUserFrame extends JFrame {
 			}
 		});
 
-		JMenuItem j1_4 = new JMenuItem("¹é»¹Í¼Êé");
+		JMenuItem j1_4 = new JMenuItem("å½’è¿˜å›¾ä¹¦");
 		j1_4.addActionListener(new ActionListener() {
 
 			@Override
@@ -91,8 +91,8 @@ public class LibraryUserFrame extends JFrame {
 		j1.add(j1_3);
 		j1.add(j1_4);
 
-		JMenu j2 = new JMenu("¸öÈËÖĞĞÄ");
-		JMenuItem j2_1 = new JMenuItem("ĞŞ¸ÄÃÜÂë");
+		JMenu j2 = new JMenu("ä¸ªäººä¸­å¿ƒ");
+		JMenuItem j2_1 = new JMenuItem("ä¿®æ”¹å¯†ç ");
 		j2_1.addActionListener(new ActionListener() {
 
 			@Override
@@ -102,8 +102,8 @@ public class LibraryUserFrame extends JFrame {
 		});
 		j2.add(j2_1);
 
-		JMenu j3 = new JMenu("ÏµÍ³");
-		JMenuItem j3_1 = new JMenuItem("×¢ÏúµÇÂ¼");
+		JMenu j3 = new JMenu("ç³»ç»Ÿ");
+		JMenuItem j3_1 = new JMenuItem("æ³¨é”€ç™»å½•");
 		j3_1.addActionListener(new ActionListener() {
 
 			@Override
