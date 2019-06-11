@@ -24,27 +24,27 @@ import javax.swing.JTextField;
 import utils.DBUtil;
 
 /**
- * µÇÂ¼½çÃæ
+ * ç™»å½•ç•Œé¢
  * 
- * @author ºÎĞËÍú
+ * @author ä½•å…´æ—º
  *
  */
 public class LogIn extends JFrame {
-	private JLabel labTitle = new JLabel("Í¼ÊéĞÅÏ¢¹ÜÀíÏµÍ³µÇÂ¼");
-	private Font font = new Font("Á¥Êé", Font.BOLD, 34);
-	private JButton btnSure = new JButton("µÇÂ¼");
-	private JButton btnCancel = new JButton("ÖØÖÃ");
-	private JButton btnZhuce = new JButton("×¢²á");
+	private JLabel labTitle = new JLabel("å›¾ä¹¦ä¿¡æ¯ç®¡ç†ç³»ç»Ÿç™»å½•");
+	private Font font = new Font("éš¶ä¹¦", Font.BOLD, 34);
+	private JButton btnSure = new JButton("ç™»å½•");
+	private JButton btnCancel = new JButton("é‡ç½®");
+	private JButton btnZhuce = new JButton("æ³¨å†Œ");
 	private JPanel panBtn = new JPanel();
 
-	private JLabel labLoginName = new JLabel("ÓÃ»§Ãû:");
-	private JLabel labPWD = new JLabel("ÃÜ    Âë:");
+	private JLabel labLoginName = new JLabel("ç”¨æˆ·å:");
+	private JLabel labPWD = new JLabel("å¯†    ç :");
 	private JTextField jtfLoginName;
 	private JPasswordField jpfPWD;
 	private JPanel panMain = new JPanel();
 
 	public LogIn() {
-		setTitle("µÇÂ¼½çÃæ");
+		setTitle("ç™»å½•ç•Œé¢");
 		// setDefaultLookAndFeelDecorated(true);
 		this.setSize(500, 350);
 		setLocationRelativeTo(null);
@@ -61,12 +61,12 @@ public class LogIn extends JFrame {
 		labTitle.setForeground(Color.RED);
 		// labTitle.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		labTitle.setBackground(Color.BLUE);
-		// µ¥Ñ¡¿ò
-		JRadioButton JB1 = new JRadioButton("¹ÜÀíÔ±µÇÂ¼");
-		JRadioButton JB2 = new JRadioButton("ÓÃ»§µÇÂ¼");
-		// ¼ÓÈë×é£¬±ÜÃâ³öÏÖ¿ÉÒÔÁ½¸ö¶¼Ñ¡ÔñµÄÇé¿ö
+		// å•é€‰æ¡†
+		JRadioButton JB1 = new JRadioButton("ç®¡ç†å‘˜ç™»å½•");
+		JRadioButton JB2 = new JRadioButton("ç”¨æˆ·ç™»å½•");
+		// åŠ å…¥ç»„ï¼Œé¿å…å‡ºç°å¯ä»¥ä¸¤ä¸ªéƒ½é€‰æ‹©çš„æƒ…å†µ
 		ButtonGroup bg = new ButtonGroup();
-		JB2.setSelected(true);// Ä¬ÈÏÑ¡ÖĞ'ÓÃ»§µÇÂ¼'
+		JB2.setSelected(true);// é»˜è®¤é€‰ä¸­'ç”¨æˆ·ç™»å½•'
 
 		jtfLoginName = new JTextField("", 10);
 		jpfPWD = new JPasswordField(16);
@@ -103,13 +103,13 @@ public class LogIn extends JFrame {
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) {
 							JOptionPane.showConfirmDialog(LogIn.this,
-									"µÇÂ½³É¹¦£¬»¶Ó­½øÈë!", "µÇÂ½³É¹¦",
+									"ç™»é™†æˆåŠŸï¼Œæ¬¢è¿è¿›å…¥!", "ç™»é™†æˆåŠŸ",
 									JOptionPane.CLOSED_OPTION);
 							dispose();
 							new LibraryUserFrame().setVisible(true);
 							LibraryUserFrame.USER_NAME = name;
 						} else {
-							JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó£¡");
+							JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯ï¼");
 						}
 					} catch (SQLException e1) {
 						e1.printStackTrace();
@@ -117,11 +117,11 @@ public class LogIn extends JFrame {
 					/*
 					 * UserDao UD = new UserDao(); UserBean uBean =
 					 * UD.findUser(name, pwd); if (uBean != null) {
-					 * JOptionPane.showConfirmDialog(LogIn.this, "µÇÂ½³É¹¦£¬»¶Ó­½øÈë!",
-					 * "µÇÂ½³É¹¦", JOptionPane.CLOSED_OPTION); dispose();
+					 * JOptionPane.showConfirmDialog(LogIn.this, "ç™»é™†æˆåŠŸï¼Œæ¬¢è¿è¿›å…¥!",
+					 * "ç™»é™†æˆåŠŸ", JOptionPane.CLOSED_OPTION); dispose();
 					 * LibraryUserFrame LU = new LibraryUserFrame();
 					 * LU.setVisible(true); LibraryUserFrame.USER_NAME = name;
-					 * }else { JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó£¡");
+					 * }else { JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯ï¼");
 					 * }
 					 */
 
@@ -135,14 +135,14 @@ public class LogIn extends JFrame {
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) {
 							JOptionPane.showConfirmDialog(LogIn.this,
-									"µÇÂ½³É¹¦£¬»¶Ó­½øÈë!", "µÇÂ½³É¹¦",
+									"ç™»é™†æˆåŠŸï¼Œæ¬¢è¿è¿›å…¥!", "ç™»é™†æˆåŠŸ",
 									JOptionPane.CLOSED_OPTION);
 							dispose();
 							LibraryRootFrame LR = new LibraryRootFrame();
 							LR.setVisible(true);
 							LibraryRootFrame.USER_NAME = name;
 						} else {
-							JOptionPane.showMessageDialog(null, "ÕËºÅ»òÃÜÂë´íÎó£¡");
+							JOptionPane.showMessageDialog(null, "è´¦å·æˆ–å¯†ç é”™è¯¯ï¼");
 						}
 					} catch (SQLException e1) {
 						e1.printStackTrace();
@@ -172,7 +172,7 @@ public class LogIn extends JFrame {
 		panBtn.add(btnSure);
 		panBtn.add(btnCancel);
 		panBtn.add(btnZhuce);
-		// °Ñµ¥Ñ¡°´Å¥¼ÓÈë×é
+		// æŠŠå•é€‰æŒ‰é’®åŠ å…¥ç»„
 		bg.add(JB1);
 		bg.add(JB2);
 
@@ -183,15 +183,14 @@ public class LogIn extends JFrame {
 		panMain.add(jpfPWD);
 		panMain.add(JB1);
 		panMain.add(JB2);
-		ImageIcon img = new ImageIcon(
-				"C:\\Users\\mac\\workspace\\liberty\\image\\ZhuCe.png");
-		// ÒªÉèÖÃµÄ±³¾°Í¼Æ¬
+		ImageIcon img = new ImageIcon("image/ZhuCe.png");
+		// è¦è®¾ç½®çš„èƒŒæ™¯å›¾ç‰‡
 		JLabel imgLabel = new JLabel(img);
-		// ½«±³¾°Í¼·ÅÔÚ±êÇ©Àï¡£
+		// å°†èƒŒæ™¯å›¾æ”¾åœ¨æ ‡ç­¾é‡Œã€‚
 		panMain.add(imgLabel, new Integer(Integer.MIN_VALUE));
-		// ½«±³¾°±êÇ©Ìí¼Óµ½jframµÄLayeredPaneÃæ°åÀï¡£
+		// å°†èƒŒæ™¯æ ‡ç­¾æ·»åŠ åˆ°jframçš„LayeredPaneé¢æ¿é‡Œã€‚
 		imgLabel.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());
-		// ÉèÖÃ±³¾°±êÇ©µÄÎ»ÖÃ
+		// è®¾ç½®èƒŒæ™¯æ ‡ç­¾çš„ä½ç½®
 		Container contain = this.getContentPane();
 		((JPanel) contain).setOpaque(false);
 	}
